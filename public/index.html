@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CyberShield // Python Vercel Engine</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex items-center justify-center p-4 font-sans">
+  <div class="w-full max-w-md border border-cyan-500/30 bg-slate-900/90 rounded-2xl p-6 space-y-6 shadow-[0_0_50px_rgba(6,182,212,0.15)]">
+    <div class="text-center space-y-1">
+      <h1 class="text-2xl font-mono font-bold text-cyan-400">CyberShield</h1>
+      <p class="text-xs text-slate-400 font-mono">[ Python Serverless Backend ]</p>
+    </div>
 
+    <div class="space-y-2">
+      <input
+        id="pwdInput"
+        type="text"
+        placeholder="Enter password to audit..."
+        class="w-full px-4 py-2.5 bg-slate-950 border border-slate-700 rounded-lg text-sm font-mono text-cyan-300 focus:outline-none focus:border-cyan-400"
+      />
+      <div id="status" class="text-xs font-mono text-slate-400">Strength: -</div>
+      <ul id="feedback" class="text-xs text-rose-400 list-disc pl-4 space-y-1"></ul>
+    </div>
+
+    <button
+      id="genBtn"
+      class="w-full py-3 bg-gradient-to-r from-teal-500 to-cyan-500 text-slate-950 font-mono font-bold text-sm rounded-lg hover:opacity-90 transition shadow-lg"
+    >
+      Generate Secure Key (Python)
+    </button>
+  </div>
+
+  <script>
+    const pwdInput = document.getElementById('pwdInput');
+    const status = document.getElementById('status');
+    const feedback = document.getElementById('feedback');
+    const genBtn = document.getElementById('genBtn');
+
+    pwdInput.addEventListener('input', async (e) => {
+      const val = e.target.value;
+      if (!val) {
+        status.textContent = 'Strength: -';
+        feedback.innerHTML = '';
+        return;
+      }
+      const res = await fetch(`/api/audit?password=${encodeURIComponent(val)}`);
+      const data = await res.json();
+      status.textContent = `Strength: ${data.level} (${data.score}/${data.max_score})`;
+      feedback.innerHTML = data.feedback.map(f => `<li>${f}</li>`).join('');
+    });
+
+    genBtn.addEventListener('click', async () => {
+      const res = await fetch('/api/generate?length=16');
+      const data = await res.json();
+      pwdInput.value = data.password;
+      pwdInput.dispatchEvent(new Event('input'));
+    });
+  </script>
+</body>
+</html>
