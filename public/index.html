@@ -3,59 +3,199 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CyberShield // Python Vercel Engine</title>
+  <title>CyberShield // Python Keygen</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-slate-950 text-slate-100 min-h-screen flex items-center justify-center p-4 font-sans">
-  <div class="w-full max-w-md border border-cyan-500/30 bg-slate-900/90 rounded-2xl p-6 space-y-6 shadow-[0_0_50px_rgba(6,182,212,0.15)]">
-    <div class="text-center space-y-1">
-      <h1 class="text-2xl font-mono font-bold text-cyan-400">CyberShield</h1>
-      <p class="text-xs text-slate-400 font-mono">[ Python Serverless Backend ]</p>
-    </div>
+<body class="bg-slate-950 text-slate-100 min-h-screen antialiased flex items-center justify-center p-4 font-sans bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-black relative overflow-hidden">
 
-    <div class="space-y-2">
-      <input
-        id="pwdInput"
-        type="text"
-        placeholder="Enter password to audit..."
-        class="w-full px-4 py-2.5 bg-slate-950 border border-slate-700 rounded-lg text-sm font-mono text-cyan-300 focus:outline-none focus:border-cyan-400"
-      />
-      <div id="status" class="text-xs font-mono text-slate-400">Strength: -</div>
-      <ul id="feedback" class="text-xs text-rose-400 list-disc pl-4 space-y-1"></ul>
-    </div>
+  <div class="absolute top-1/4 -left-32 w-96 h-96 bg-cyan-500/10 rounded-full blur-[128px] pointer-events-none"></div>
+  <div class="absolute bottom-1/4 -right-32 w-96 h-96 bg-teal-500/10 rounded-full blur-[128px] pointer-events-none"></div>
 
-    <button
-      id="genBtn"
-      class="w-full py-3 bg-gradient-to-r from-teal-500 to-cyan-500 text-slate-950 font-mono font-bold text-sm rounded-lg hover:opacity-90 transition shadow-lg"
-    >
-      Generate Secure Key (Python)
-    </button>
-  </div>
+  <main class="w-full max-w-md border border-cyan-500/30 bg-slate-900/90 backdrop-blur-xl rounded-2xl p-6 sm:p-8 shadow-[0_0_50px_rgba(6,182,212,0.15)] relative z-10 space-y-6">
+    
+    <header class="text-center space-y-1">
+      <h1 class="text-2xl font-mono font-bold tracking-wider uppercase bg-gradient-to-r from-teal-400 via-cyan-400 to-sky-400 bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(34,211,238,0.4)]">
+        CyberShield
+      </h1>
+      <p class="text-xs text-slate-400 font-mono tracking-wide">
+        [ Deterministic Vault Keygen Engine ]
+      </p>
+    </header>
+
+    <section class="space-y-2">
+      <div class="flex justify-between items-center text-xs font-mono uppercase tracking-wider text-slate-400">
+        <label for="pwdInput">Target Password</label>
+        <span id="strengthStatus" class="font-semibold text-cyan-400"></span>
+      </div>
+
+      <div class="relative flex items-center">
+        <input
+          id="pwdInput"
+          type="password"
+          placeholder="Enter Original Password..."
+          class="w-full pl-4 pr-11 py-3 bg-slate-950/80 border border-slate-700/80 rounded-lg text-cyan-200 placeholder-slate-500 text-sm font-mono focus:outline-none focus:border-cyan-400 focus:ring-1 focus:ring-cyan-400 transition"
+          autocomplete="off"
+          spellcheck="false"
+        />
+        <button
+          id="togglePwdBtn"
+          type="button"
+          aria-label="Toggle Password Visibility"
+          class="absolute right-3 p-1 text-slate-400 hover:text-cyan-400 transition-colors focus:outline-none"
+        >
+          <svg id="eyeOpen" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+          <svg id="eyeClosed" xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24"/>
+            <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68"/>
+            <path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61"/>
+            <line x1="2" x2="22" y1="2" y2="22"/>
+          </svg>
+        </button>
+      </div>
+
+      <ul id="feedbackList" class="text-xs text-rose-400 list-disc pl-4 space-y-0.5 pt-1"></ul>
+    </section>
+
+    <section class="space-y-4">
+      <button
+        id="genBtn"
+        type="button"
+        class="w-full py-3.5 px-4 bg-gradient-to-r from-teal-500 via-cyan-500 to-sky-500 hover:from-teal-400 hover:to-sky-400 text-slate-950 font-mono font-bold text-sm tracking-wider uppercase rounded-xl transition-all duration-200 shadow-[0_0_25px_rgba(6,182,212,0.35)] active:scale-[0.98] flex items-center justify-center gap-2"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 2l-2 2m-1-1l-3 3 1.5 1.5M19 5l-2.5 2.5m-1.5 1.5L9 14l-4 4 2 2 4-4 4.5-4.5"/>
+        </svg>
+        Generate Vault Passkey
+      </button>
+
+      <p id="errorMsg" class="text-xs font-mono text-rose-400 text-center hidden tracking-wider uppercase font-semibold"></p>
+
+      <div id="outputBox" class="hidden items-center gap-2 p-2 bg-slate-950/95 border border-cyan-500/40 rounded-xl shadow-inner">
+        <input
+          id="outputInput"
+          type="text"
+          readonly
+          aria-label="Generated Secure Vault Key"
+          class="w-full bg-transparent px-3 text-sm sm:text-base font-mono text-cyan-300 outline-none select-all"
+        />
+        <button
+          id="copyBtn"
+          type="button"
+          class="px-4 py-2 rounded-lg font-mono text-xs font-semibold uppercase tracking-wider transition-all duration-150 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/40 whitespace-nowrap shadow-[0_0_12px_rgba(6,182,212,0.2)]"
+        >
+          Copy
+        </button>
+      </div>
+    </section>
+  </main>
 
   <script>
     const pwdInput = document.getElementById('pwdInput');
-    const status = document.getElementById('status');
-    const feedback = document.getElementById('feedback');
+    const togglePwdBtn = document.getElementById('togglePwdBtn');
+    const eyeOpen = document.getElementById('eyeOpen');
+    const eyeClosed = document.getElementById('eyeClosed');
+    const strengthStatus = document.getElementById('strengthStatus');
+    const feedbackList = document.getElementById('feedbackList');
     const genBtn = document.getElementById('genBtn');
+    const errorMsg = document.getElementById('errorMsg');
+    const outputBox = document.getElementById('outputBox');
+    const outputInput = document.getElementById('outputInput');
+    const copyBtn = document.getElementById('copyBtn');
 
-    pwdInput.addEventListener('input', async (e) => {
-      const val = e.target.value;
-      if (!val) {
-        status.textContent = 'Strength: -';
-        feedback.innerHTML = '';
-        return;
+    // Toggle Input Masking (Stars <-> Plaintext)
+    togglePwdBtn.addEventListener('click', () => {
+      const isPassword = pwdInput.type === 'password';
+      pwdInput.type = isPassword ? 'text' : 'password';
+
+      if (isPassword) {
+        eyeOpen.classList.remove('hidden');
+        eyeClosed.classList.add('hidden');
+      } else {
+        eyeOpen.classList.add('hidden');
+        eyeClosed.classList.remove('hidden');
       }
-      const res = await fetch(`/api/audit?password=${encodeURIComponent(val)}`);
-      const data = await res.json();
-      status.textContent = `Strength: ${data.level} (${data.score}/${data.max_score})`;
-      feedback.innerHTML = data.feedback.map(f => `<li>${f}</li>`).join('');
     });
 
+    // Audit Password using Python API Backend on Input
+    pwdInput.addEventListener('input', async (e) => {
+      errorMsg.classList.add('hidden');
+      const val = e.target.value;
+
+      if (!val) {
+        strengthStatus.textContent = '';
+        feedbackList.innerHTML = '';
+        return;
+      }
+
+      try {
+        const res = await fetch(`/api/audit?password=${encodeURIComponent(val)}`);
+        const data = await res.json();
+        strengthStatus.textContent = `[ ${data.level} : ${data.score}/${data.max_score} ]`;
+        feedbackList.innerHTML = data.feedback.map(item => `<li>${item}</li>`).join('');
+      } catch (err) {
+        // Fallback offline audit if API is loading
+        strengthStatus.textContent = val.length >= 8 ? '[ Valid ]' : '[ Weak ]';
+      }
+    });
+
+    // Deterministic Vault Key Derivation:
+    // 1. Same input -> Always yields identical output key
+    // 2. Output is guaranteed never to equal the input password
+    async function deriveVaultPasskey(rawPassword) {
+      const VAULT_SALT = "CyberShield-Deterministic-Salt-Python-2026";
+      const encoder = new TextEncoder();
+      const data = encoder.encode(rawPassword + VAULT_SALT);
+      
+      const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+      const hashArray = Array.from(new Uint8Array(hashBuffer));
+      
+      const charPool = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+-=';
+      let derived = '';
+      
+      for (let i = 0; i < 22; i++) {
+        const byte = hashArray[i % hashArray.length];
+        const offset = hashArray[(i + 5) % hashArray.length];
+        derived += charPool[(byte + offset + i) % charPool.length];
+      }
+      
+      return `SEC_${derived}`;
+    }
+
+    // Button Click: Generates output below button without modifying original input
     genBtn.addEventListener('click', async () => {
-      const res = await fetch('/api/generate?length=16');
-      const data = await res.json();
-      pwdInput.value = data.password;
-      pwdInput.dispatchEvent(new Event('input'));
+      const rawPassword = pwdInput.value;
+
+      if (!rawPassword.trim()) {
+        errorMsg.textContent = "! Enter Original Password";
+        errorMsg.classList.remove('hidden');
+        outputBox.classList.add('hidden');
+        return;
+      }
+
+      errorMsg.classList.add('hidden');
+
+      // Generate deterministic output key
+      const vaultKey = await deriveVaultPasskey(rawPassword);
+      outputInput.value = vaultKey;
+
+      // Reveal output below the button
+      outputBox.classList.remove('hidden');
+      outputBox.classList.add('flex');
+    });
+
+    // Copy to Clipboard
+    copyBtn.addEventListener('click', async () => {
+      if (!outputInput.value) return;
+      await navigator.clipboard.writeText(outputInput.value);
+      copyBtn.textContent = 'Secured!';
+      copyBtn.className = 'px-4 py-2 rounded-lg font-mono text-xs font-semibold uppercase tracking-wider transition-all duration-150 bg-emerald-500/20 text-emerald-300 border border-emerald-500/50 shadow-[0_0_15px_rgba(52,211,153,0.4)]';
+      setTimeout(() => {
+        copyBtn.textContent = 'Copy';
+        copyBtn.className = 'px-4 py-2 rounded-lg font-mono text-xs font-semibold uppercase tracking-wider transition-all duration-150 bg-cyan-500/10 hover:bg-cyan-500/20 text-cyan-400 border border-cyan-500/40 shadow-[0_0_12px_rgba(6,182,212,0.2)]';
+      }, 2000);
     });
   </script>
 </body>
